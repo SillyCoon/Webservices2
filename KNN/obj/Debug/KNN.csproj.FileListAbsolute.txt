@@ -1,0 +1,6 @@
+C:\Users\aleksey.ivanov\source\repos\Lab2\KNN\bin\Debug\KNN.dll
+C:\Users\aleksey.ivanov\source\repos\Lab2\KNN\bin\Debug\KNN.pdb
+C:\Users\aleksey.ivanov\source\repos\Lab2\KNN\obj\Debug\KNN.csprojAssemblyReference.cache
+C:\Users\aleksey.ivanov\source\repos\Lab2\KNN\obj\Debug\KNN.csproj.CoreCompileInputs.cache
+C:\Users\aleksey.ivanov\source\repos\Lab2\KNN\obj\Debug\KNN.dll
+C:\Users\aleksey.ivanov\source\repos\Lab2\KNN\obj\Debug\KNN.pdb

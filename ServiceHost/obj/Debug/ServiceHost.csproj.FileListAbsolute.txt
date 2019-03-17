@@ -1,0 +1,7 @@
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\ServiceHost.exe.config
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\ServiceHost.exe
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\ServiceHost.pdb
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csprojAssemblyReference.cache
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csproj.CoreCompileInputs.cache
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.exe
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.pdb
