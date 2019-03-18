@@ -6,32 +6,72 @@ using System.Threading.Tasks;
 
 using System.ServiceModel;
 using System.ServiceModel.Description;
+using KNN = KNN.KNN;
 
 namespace Host
 {
+    public struct DatasetInfo
+    {
+        public int ColumnNumber { get; set; }
+        public int RowsNumber { get; set; }
+        public Dictionary<string, int> ClassDistribution { get; set; }
+    }
+
     [ServiceContract]
     public interface IStringService
     {
         [OperationContract]
-        int GetWordCount(string text);
+        string DefineClass(string unknownDataset);
+
+        [OperationContract]
+        string AddString(string knownDataset);
+
+        [OperationContract]
+        DatasetInfo GetDatasetInformation();
+
+        [OperationContract]
+        string GetPrivateInformation();
     }
 
     public class StringService : IStringService
     {
-        private char[] delimeters = Enumerable.Range(0, 256)
-            .Select(i => (char)i)
-            .Where(c => char.IsWhiteSpace(c) || char.IsPunctuation(c))
-            .ToArray();
 
-        public int GetWordCount(string s)
+        private global::KNN.KNN classDefiner = new global::KNN.KNN();
+
+        public string DefineClass(string unknownDataset)
         {
-            string[] words = s.Split(delimeters,
-                StringSplitOptions.RemoveEmptyEntries);
-            return words.Length;
+            return classDefiner.DefineSetClass(unknownDataset);
+        }
+
+        public string AddString(string knownDataset)
+        {
+            classDefiner.AddString(knownDataset);
+            return "Success";
+        }
+
+        public DatasetInfo GetDatasetInformation()
+        {
+            classDefiner.GetDataFromCsv();
+            var datasetLength = classDefiner.GetDatasetLength;
+            var columnNumber = classDefiner.ColumnsQuantity;
+            var classDistribution = classDefiner.ClassDistribution();
+            return  new DatasetInfo
+            {
+                ColumnNumber = columnNumber,
+                RowsNumber = datasetLength,
+                ClassDistribution = classDistribution
+            };
+        }
+
+        public string GetPrivateInformation()
+        {
+            throw new NotImplementedException();
         }
     }
     class Program
     {
+      
+
         static void Main(string[] args)
         {
             string uri = "http://localhost:8080/StringService";

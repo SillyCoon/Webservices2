@@ -11,11 +11,8 @@ namespace KNN
     public class KNN
     {
         string wineFileName = "../../wines.csv";
-        string testData = "1,13.76,1.53,2.7,19.5,132,2.95,2.74,.5,1.35,5.4,1.25,3,1235";
 
         public List<string[]> Data { get; set; }
-
-        public string[] DefiningSet { get; set; }
 
         public int K { get; } = 7;
 
@@ -29,7 +26,7 @@ namespace KNN
         public int ColumnsQuantity => Data[0].Length;
 
         // Euclid Distance, return K nearest neighbors
-        public Dictionary<double, string[]> ProximityMeasure()
+        public Dictionary<double, string[]> ProximityMeasure(string[] definingSet)
         {
            Dictionary<double, string[]> measures = new Dictionary<double, string[]>();
 
@@ -38,23 +35,26 @@ namespace KNN
                 double result = 0;
                 for (int i = 1; i < ColumnsQuantity; i++)
                 {
-                    result += Math.Pow(Convert.ToDouble(DefiningSet[i].Replace('.', ',')) - Convert.ToDouble(set[i].Replace('.', ',')), 2);
+                    result += Math.Pow(Convert.ToDouble(definingSet[i].Replace('.', ',')) - Convert.ToDouble(set[i].Replace('.', ',')), 2);
                 }
                 measures.Add(Math.Sqrt(result), set);
             }
 
-            return measures.OrderBy(item => item.Key).Take(K).ToDictionary(item => item.Key, item => item.Value);
+            var res = measures.OrderBy(item => item.Key).Take(K).ToDictionary(item => item.Key, item => item.Value);
+            return res;
         }
 
         // Define class of object
-        public string DefineSetClass()
+        public string DefineSetClass(string definingDataset)
         {
             GetDataFromCsv();
-            var neighbors = ProximityMeasure();
-
+            
+            var neighbors = ProximityMeasure(StringToSet(definingDataset));
+            var temp = neighbors.GroupBy(item => item.Value[0], (item, t) => new {Key = item, Cnt = t.Count()})
+                .ToList();
             var result = neighbors
                 .GroupBy(item => item.Value[0], (item, t) => new {Key = item, Cnt = t.Count()})
-                .OrderBy(item => item.Cnt).Select(item => item.Key)
+                .OrderByDescending(item => item.Cnt).Select(item => item.Key)
                 .FirstOrDefault();
 
             return result;
@@ -62,9 +62,9 @@ namespace KNN
         // Add new string to our dataset
         public void AddString(string data)
         {
-            using (StreamWriter stream = new StreamWriter(wineFileName))
+            using (StreamWriter stream = new StreamWriter(wineFileName, append: true))
             {
-                stream.Write(data);
+                stream.Write(data + "\n");
             }
         }
         // How many objects belongs to classes
@@ -86,7 +86,7 @@ namespace KNN
             return csvParser.Split(str);
         }
 
-        private void GetDataFromCsv()
+        public void GetDataFromCsv()
         {
             Data = new List<string[]>();
             using (StreamReader reader = new StreamReader(wineFileName))

@@ -51,5 +51,11 @@
     <None Include="App.config" />
     <None Include="wines.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KNN\KNN.csproj">
+      <Project>{76385407-F702-4924-8B55-FCBE97A086FD}</Project>
+      <Name>KNN</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,3 +5,6 @@ C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.cs
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csproj.CoreCompileInputs.cache
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.exe
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.pdb
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\KNN.dll
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\KNN.pdb
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csproj.CopyComplete

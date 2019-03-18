@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fa2ae241-6914-4932-b02c-c21f4da8301f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/StringService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StringService.disco" MetadataType="Disco" ID="17410969-3a3f-41b4-8f18-de1beca51cbf" SourceId="1" SourceUrl="http://localhost:8080/StringService?disco" />
+    <MetadataFile FileName="StringService2.xsd" MetadataType="Schema" ID="b2ef2a0a-3098-4ead-acaa-f50fc3ed5143" SourceId="1" SourceUrl="http://localhost:8080/StringService?xsd=xsd2" />
+    <MetadataFile FileName="StringService.wsdl" MetadataType="Wsdl" ID="441fb29a-4f8b-45a1-9140-08b9f0003a09" SourceId="1" SourceUrl="http://localhost:8080/StringService?wsdl" />
+    <MetadataFile FileName="StringService1.xsd" MetadataType="Schema" ID="d9b28efd-0553-4abd-bf39-a3aaeda406ce" SourceId="1" SourceUrl="http://localhost:8080/StringService?xsd=xsd0" />
+    <MetadataFile FileName="StringService.xsd" MetadataType="Schema" ID="4e756a54-000f-49e2-bf93-7c7a018083ee" SourceId="1" SourceUrl="http://localhost:8080/StringService?xsd=xsd1" />
+    <MetadataFile FileName="StringService21.xsd" MetadataType="Schema" ID="7425ec36-b483-4056-a007-7cadd8845697" SourceId="1" SourceUrl="http://localhost:8080/StringService?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

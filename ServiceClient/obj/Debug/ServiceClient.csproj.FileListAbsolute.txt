@@ -5,3 +5,5 @@ C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClien
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.exe
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.pdb
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csprojAssemblyReference.cache
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\Client.Form1.resources
+C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csproj.GenerateResource.cache
