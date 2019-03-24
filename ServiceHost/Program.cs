@@ -7,40 +7,53 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using KNN = KNN.KNN;
+using KNN;
 
 namespace Host
 {
-    public struct DatasetInfo
+
+    public struct PrivateInfo
     {
-        public int ColumnNumber { get; set; }
-        public int RowsNumber { get; set; }
-        public Dictionary<string, int> ClassDistribution { get; set; }
+        public int Clients { get; set; }
+        public int Requests { get; set; }
     }
 
     [ServiceContract]
     public interface IStringService
     {
         [OperationContract]
-        string DefineClass(string unknownDataset);
+        Task<string> DefineClass(string unknownDataset);
 
         [OperationContract]
         string AddString(string knownDataset);
 
         [OperationContract]
-        DatasetInfo GetDatasetInformation();
+        Task<DatasetInfo> GetDatasetInformation();
 
         [OperationContract]
-        string GetPrivateInformation();
+        PrivateInfo GetPrivateInformation();
+
+        [OperationContract]
+        void RegisterClient();
+
+        [OperationContract]
+        void UnregisterClient();
+
+        [OperationContract]
+        void IncreaseRequestsQuantity();
     }
 
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class StringService : IStringService
     {
+        public int ClientQuantity;
+        public int RequestsQuantity;
 
         private global::KNN.KNN classDefiner = new global::KNN.KNN();
 
-        public string DefineClass(string unknownDataset)
+        public async Task<string> DefineClass(string unknownDataset)
         {
-            return classDefiner.DefineSetClass(unknownDataset);
+            return await classDefiner.DefineSetClass(unknownDataset);
         }
 
         public string AddString(string knownDataset)
@@ -49,23 +62,41 @@ namespace Host
             return "Success";
         }
 
-        public DatasetInfo GetDatasetInformation()
+        public async Task<DatasetInfo> GetDatasetInformation()
         {
-            classDefiner.GetDataFromCsv();
-            var datasetLength = classDefiner.GetDatasetLength;
-            var columnNumber = classDefiner.ColumnsQuantity;
-            var classDistribution = classDefiner.ClassDistribution();
-            return  new DatasetInfo
-            {
-                ColumnNumber = columnNumber,
-                RowsNumber = datasetLength,
-                ClassDistribution = classDistribution
-            };
+            var kek = await classDefiner.GetDatasetInfo();
+            return kek;
         }
 
-        public string GetPrivateInformation()
+        public PrivateInfo GetPrivateInformation()
         {
-            throw new NotImplementedException();
+            return new PrivateInfo {Clients = ClientQuantity, Requests = RequestsQuantity};
+        }
+        public void RegisterClient()
+        {
+            object syncObj = new object();
+            lock (syncObj)
+            {
+                ClientQuantity++;
+            }
+        }
+
+        public void UnregisterClient()
+        {
+            object unregister = new object();
+            lock (unregister)
+            {
+                ClientQuantity--;
+            }
+        }
+
+        public void IncreaseRequestsQuantity()
+        {
+            object incRequests = new object();
+            lock (incRequests)
+            {
+                RequestsQuantity++;
+            }
         }
     }
     class Program

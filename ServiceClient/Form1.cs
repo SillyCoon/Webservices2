@@ -17,20 +17,26 @@ namespace Client
         public Form1()
         {
             client = new StringServiceClient();
+            ClientRegistration();
             InitializeComponent();
         }
 
-        private void DefineClass(object sender, EventArgs e)
+        private async void ClientRegistration()
         {
-            string set = textBox2.Text;
-            var response = client.DefineClass(set);
-            this.label4.Text = response;
-
+            await client.RegisterClientAsync();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void DefineClass(object sender, EventArgs e)
         {
-            DatasetInfo response = client.GetDatasetInformation();
+            string set = textBox2.Text;
+            var response = await client.DefineClassAsync(set);
+            label4.Text = response;
+            await client.IncreaseRequestsQuantityAsync();
+        }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            DatasetInfo response = await client.GetDatasetInformationAsync();
             cols.Text = response.ColumnNumber.ToString();
             rows.Text = response.RowsNumber.ToString();
 
@@ -42,6 +48,7 @@ namespace Client
             }
 
             classes.Text = classDistribution;
+            await client.IncreaseRequestsQuantityAsync();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,12 +56,30 @@ namespace Client
 
         }
 
-        private void AddString(object sender, EventArgs e)
+        private async void AddString(object sender, EventArgs e)
         {
             string addingSet = textBox1.Text;
-            string response = client.AddString(addingSet);
+            string response = await client.AddStringAsync(addingSet);
             label3.Text = response;
+            await client.IncreaseRequestsQuantityAsync();
         }
-        
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            var response = await client.GetPrivateInformationAsync();
+            label10.Text = response.Clients.ToString();
+            label11.Text = response.Requests.ToString();
+            await client.IncreaseRequestsQuantityAsync();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            await client.UnregisterClientAsync();
+        }
     }
 }

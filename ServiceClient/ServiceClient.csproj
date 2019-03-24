@@ -68,6 +68,9 @@
     <None Include="Connected Services\ServiceReference1\Client.ServiceReference1.DatasetInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\Client.ServiceReference1.PrivateInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\StringService.wsdl" />
     <None Include="Connected Services\ServiceReference1\StringService.xsd">
       <SubType>Designer</SubType>
@@ -79,6 +82,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\StringService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\StringService3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

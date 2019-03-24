@@ -10,3 +10,9 @@ C:\Users\aleksey.ivanov\Desktop\WebService1\KNN\obj\Debug\KNN.csprojAssemblyRefe
 C:\Users\aleksey.ivanov\Desktop\WebService1\KNN\obj\Debug\KNN.csproj.CoreCompileInputs.cache
 C:\Users\aleksey.ivanov\Desktop\WebService1\KNN\obj\Debug\KNN.dll
 C:\Users\aleksey.ivanov\Desktop\WebService1\KNN\obj\Debug\KNN.pdb
+C:\Users\Aleksey\Desktop\WebService1\KNN\obj\Debug\KNN.csprojAssemblyReference.cache
+C:\Users\Aleksey\Desktop\WebService1\KNN\obj\Debug\KNN.csproj.CoreCompileInputs.cache
+C:\Users\Aleksey\Desktop\WebService1\KNN\obj\Debug\KNN.dll
+C:\Users\Aleksey\Desktop\WebService1\KNN\obj\Debug\KNN.pdb
+C:\Users\Aleksey\Desktop\WebService1\KNN\bin\Debug\KNN.dll
+C:\Users\Aleksey\Desktop\WebService1\KNN\bin\Debug\KNN.pdb

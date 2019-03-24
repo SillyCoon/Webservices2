@@ -8,3 +8,13 @@ C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.pd
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\KNN.dll
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\bin\Debug\KNN.pdb
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csproj.CopyComplete
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\bin\Debug\ServiceHost.exe.config
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\bin\Debug\ServiceHost.exe
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\bin\Debug\ServiceHost.pdb
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\bin\Debug\KNN.dll
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\bin\Debug\KNN.pdb
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csprojAssemblyReference.cache
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csproj.CoreCompileInputs.cache
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.csproj.CopyComplete
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.exe
+C:\Users\Aleksey\Desktop\WebService1\ServiceHost\obj\Debug\ServiceHost.pdb

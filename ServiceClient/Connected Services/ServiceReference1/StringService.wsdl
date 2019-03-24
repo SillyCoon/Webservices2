@@ -4,8 +4,9 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/StringService?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/StringService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8080/StringService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Host" />
+      <xsd:import schemaLocation="http://localhost:8080/StringService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/KNN" />
       <xsd:import schemaLocation="http://localhost:8080/StringService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8080/StringService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Host" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IStringService_DefineClass_InputMessage">
@@ -32,6 +33,24 @@
   <wsdl:message name="IStringService_GetPrivateInformation_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPrivateInformationResponse" />
   </wsdl:message>
+  <wsdl:message name="IStringService_RegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="IStringService_RegisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStringService_UnregisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnregisterClient" />
+  </wsdl:message>
+  <wsdl:message name="IStringService_UnregisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnregisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStringService_IncreaseRequestsQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseRequestsQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IStringService_IncreaseRequestsQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseRequestsQuantityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IStringService">
     <wsdl:operation name="DefineClass">
       <wsdl:input wsaw:Action="http://tempuri.org/IStringService/DefineClass" message="tns:IStringService_DefineClass_InputMessage" />
@@ -48,6 +67,18 @@
     <wsdl:operation name="GetPrivateInformation">
       <wsdl:input wsaw:Action="http://tempuri.org/IStringService/GetPrivateInformation" message="tns:IStringService_GetPrivateInformation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStringService/GetPrivateInformationResponse" message="tns:IStringService_GetPrivateInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStringService/RegisterClient" message="tns:IStringService_RegisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStringService/RegisterClientResponse" message="tns:IStringService_RegisterClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnregisterClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStringService/UnregisterClient" message="tns:IStringService_UnregisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStringService/UnregisterClientResponse" message="tns:IStringService_UnregisterClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseRequestsQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStringService/IncreaseRequestsQuantity" message="tns:IStringService_IncreaseRequestsQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStringService/IncreaseRequestsQuantityResponse" message="tns:IStringService_IncreaseRequestsQuantity_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IStringService" type="tns:IStringService">
@@ -81,6 +112,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetPrivateInformation">
       <soap:operation soapAction="http://tempuri.org/IStringService/GetPrivateInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterClient">
+      <soap:operation soapAction="http://tempuri.org/IStringService/RegisterClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnregisterClient">
+      <soap:operation soapAction="http://tempuri.org/IStringService/UnregisterClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseRequestsQuantity">
+      <soap:operation soapAction="http://tempuri.org/IStringService/IncreaseRequestsQuantity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

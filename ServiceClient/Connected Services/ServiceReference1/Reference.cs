@@ -15,7 +15,7 @@ namespace Client.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DatasetInfo", Namespace="http://schemas.datacontract.org/2004/07/Host")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DatasetInfo", Namespace="http://schemas.datacontract.org/2004/07/KNN")]
     [System.SerializableAttribute()]
     public partial struct DatasetInfo : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -89,6 +89,66 @@ namespace Client.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PrivateInfo", Namespace="http://schemas.datacontract.org/2004/07/Host")]
+    [System.SerializableAttribute()]
+    public partial struct PrivateInfo : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ClientsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RequestsField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Clients {
+            get {
+                return this.ClientsField;
+            }
+            set {
+                if ((this.ClientsField.Equals(value) != true)) {
+                    this.ClientsField = value;
+                    this.RaisePropertyChanged("Clients");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Requests {
+            get {
+                return this.RequestsField;
+            }
+            set {
+                if ((this.RequestsField.Equals(value) != true)) {
+                    this.RequestsField = value;
+                    this.RaisePropertyChanged("Requests");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IStringService")]
     public interface IStringService {
@@ -112,10 +172,28 @@ namespace Client.ServiceReference1 {
         System.Threading.Tasks.Task<Client.ServiceReference1.DatasetInfo> GetDatasetInformationAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/GetPrivateInformation", ReplyAction="http://tempuri.org/IStringService/GetPrivateInformationResponse")]
-        string GetPrivateInformation();
+        Client.ServiceReference1.PrivateInfo GetPrivateInformation();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/GetPrivateInformation", ReplyAction="http://tempuri.org/IStringService/GetPrivateInformationResponse")]
-        System.Threading.Tasks.Task<string> GetPrivateInformationAsync();
+        System.Threading.Tasks.Task<Client.ServiceReference1.PrivateInfo> GetPrivateInformationAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/RegisterClient", ReplyAction="http://tempuri.org/IStringService/RegisterClientResponse")]
+        void RegisterClient();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/RegisterClient", ReplyAction="http://tempuri.org/IStringService/RegisterClientResponse")]
+        System.Threading.Tasks.Task RegisterClientAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/UnregisterClient", ReplyAction="http://tempuri.org/IStringService/UnregisterClientResponse")]
+        void UnregisterClient();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/UnregisterClient", ReplyAction="http://tempuri.org/IStringService/UnregisterClientResponse")]
+        System.Threading.Tasks.Task UnregisterClientAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/IncreaseRequestsQuantity", ReplyAction="http://tempuri.org/IStringService/IncreaseRequestsQuantityResponse")]
+        void IncreaseRequestsQuantity();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStringService/IncreaseRequestsQuantity", ReplyAction="http://tempuri.org/IStringService/IncreaseRequestsQuantityResponse")]
+        System.Threading.Tasks.Task IncreaseRequestsQuantityAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -169,12 +247,36 @@ namespace Client.ServiceReference1 {
             return base.Channel.GetDatasetInformationAsync();
         }
         
-        public string GetPrivateInformation() {
+        public Client.ServiceReference1.PrivateInfo GetPrivateInformation() {
             return base.Channel.GetPrivateInformation();
         }
         
-        public System.Threading.Tasks.Task<string> GetPrivateInformationAsync() {
+        public System.Threading.Tasks.Task<Client.ServiceReference1.PrivateInfo> GetPrivateInformationAsync() {
             return base.Channel.GetPrivateInformationAsync();
+        }
+        
+        public void RegisterClient() {
+            base.Channel.RegisterClient();
+        }
+        
+        public System.Threading.Tasks.Task RegisterClientAsync() {
+            return base.Channel.RegisterClientAsync();
+        }
+        
+        public void UnregisterClient() {
+            base.Channel.UnregisterClient();
+        }
+        
+        public System.Threading.Tasks.Task UnregisterClientAsync() {
+            return base.Channel.UnregisterClientAsync();
+        }
+        
+        public void IncreaseRequestsQuantity() {
+            base.Channel.IncreaseRequestsQuantity();
+        }
+        
+        public System.Threading.Tasks.Task IncreaseRequestsQuantityAsync() {
+            return base.Channel.IncreaseRequestsQuantityAsync();
         }
     }
 }

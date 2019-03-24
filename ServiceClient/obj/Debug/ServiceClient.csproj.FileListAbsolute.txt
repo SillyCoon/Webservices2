@@ -7,3 +7,12 @@ C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClien
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csprojAssemblyReference.cache
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\Client.Form1.resources
 C:\Users\aleksey.ivanov\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csproj.GenerateResource.cache
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\bin\Debug\ServiceClient.exe.config
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\bin\Debug\ServiceClient.exe
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\bin\Debug\ServiceClient.pdb
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csprojAssemblyReference.cache
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\obj\Debug\Client.Form1.resources
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csproj.GenerateResource.cache
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.csproj.CoreCompileInputs.cache
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.exe
+C:\Users\Aleksey\Desktop\WebService1\ServiceClient\obj\Debug\ServiceClient.pdb
